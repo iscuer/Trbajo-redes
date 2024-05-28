@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+	<!-- Required meta tags -->
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+	<link rel="shortcut icon" href="assets/images/favicon.ico" type="image/x-icon">
+	<title>Modelos | Truffade Motors</title>
+
+	<link rel="stylesheet" href="css/style.css" />
+	<link rel="stylesheet" href="css/modelos.css" />
+	<link rel="stylesheet" href="css/nav.css" />
+</head>
+
+<body>
+	<header class="header">
+		<nav class="nav">
+			<!--Logo-->
+			<a href="index.html">
+				<img class="nav__logo" src="./assets/images/logo.png" alt="logo" />
+			</a>
+
+			<!--Menu-->
+			<ul class="nav__list">
+				<li class="nav__item">
+					<a class="nav__link" href="index.html">Inicio</a>
+				</li>
+				<li class="nav__item">
+					<a class="nav__link" href="modelos.html">Modelos</a>
+				</li>
+				<li class="nav__item">
+					<a class="nav__link" href="citaprevia.html">Cita previa</a>
+				</li>
+				<li class="nav__item">
+					<a class="nav__link" href="pedidos.html">Pedidos</a>
+				</li>
+			</ul>
+		</nav>
+	</header>
+
+	<main class="models-container">
+		<h1 class="models-container__title">Pedidos</h1>
+		<hr class="models-container__line" />
+
+		<form action="pedidos" method="post">
+		
+		  <input id="nombre" type="text" placeholder="NOMBRE">
+		  <input id="email" type="text" placeholder="EMAIL" name="email">
+		  <input id="telefono" type="text" placeholder="TELEFONO">
+		  <input id="modelo" type="text" placeholder="MODELO">
+		  <input id="color" type="text" placeholder="COLOR">
+		  </form>
+		  <form action="javascript:" onsubmit="alert('Email enviado')"> 
+			<input id="submit" type="submit" value="ENVIAR">
+  
+		</form>
+
+	</main>
+</body>
+
+</html>

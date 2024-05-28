@@ -1,0 +1,51 @@
+crear una carpeta del proyecto:(flask_mail)
+
+crear un entorno virtual(flaskmail) donde se instalaran las librerías:
+
+python -m venv flaskmail
+
+activación del entorno virtual
+
+.\flaskmail\Scripts\activate
+
+así se visualizará  ------>  (flaskmail) D:\flask_mail>
+
+instalar las librerías a usar:
+python.exe -m pip install --upgrade pip (actualiza el comando de instalación pip)
+
+Flask: Es el framework web utilizado para crear la aplicación Flask.
+pip install flask
+
+Flask-Mail: Es la extensión de Flask utilizada para enviar correos electrónicos.
+pip install Flask-Mail
+
+
+Ahora configuraremos el servidor de correo del ejercicio:
+#####################################################
+
+from flask import Flask
+from flask_mail import Mail, Message  #error importando las librerias                                                                       
+
+#Crear app medante instancia
+app = Flask(__name__)
+
+#Flask-Mail
+app.config['MAIL_SERVER']='smtp.gmail.com'
+app.config['MAIL_PORT'] = 465
+app.config['MAIL_USERNAME'] = 'conrado1405@gmail.com'
+app.config['MAIL_PASSWORD'] = 'bfsbtvdjsbgxsudr'
+app.config['MAIL_USE_TLS'] = False
+app.config['MAIL_USE_SSL'] = True
+mail = Mail()
+#Crear rutas con sus correspondientes funciones
+
+@app.route("/")
+def index():
+   mail.init_app(app)
+   msg = Message('Hello', sender = 'conrado1405@gmail.com', recipients = ['aldez1985@gmail.com'])
+   msg.body = "Hello Flask message sent from Flask-Mail"
+   mail.send(msg)
+   return "Sent"
+
+
+
